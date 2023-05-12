@@ -10,15 +10,19 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0.05f; 
 
     Vector2 movementInput;
+    Vector3 playerRotation; 
     Rigidbody2D rb;
     Animator animator; 
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>(); 
+    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+
+    public SwordAttack swordAttack; 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
+        playerRotation = transform.eulerAngles; 
     }
 
     private void FixedUpdate()
@@ -49,8 +53,6 @@ public class PlayerController : MonoBehaviour
 
     private void rotatePlayer(Vector2 direction)
     {
-        Vector3 playerRotation = transform.eulerAngles; 
-
         int zDirection = 0; 
 
         if (direction.y > 0)
@@ -101,25 +103,48 @@ public class PlayerController : MonoBehaviour
 
     private bool TryMove(Vector2 direction)
     {
-        int count = rb.Cast(
+        if (direction != Vector2.zero)
+        {
+            int count = rb.Cast(
                 movementInput, // X and Y values between -1 and 1 that represent the direction from the body to look for collisions
                 movementFilter, // The settings that determine where a collision can occur on such as layers to collide with
                 castCollisions, // List of collisions to store the found collisions into after the Cast is finished
                 moveSpeed * Time.fixedDeltaTime + collisionOffset); // The amount to cast equal to the movement plus an offset
 
-        if (count == 0)
-        {
-            rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
-            return true;
+           if (count == 0)
+           {
+                rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
+                return true;
+           }
+           else
+           {
+                return false; 
+           }
         }
         else
         {
             return false; 
         }
+        
     }
 
     void OnMove(InputValue movementValue)
     {
         movementInput = movementValue.Get<Vector2>(); 
+    }
+
+    void OnFire()
+    {
+        animator.SetTrigger("swordAttack");
+    }
+
+    public void SwordAttack()
+    {
+        swordAttack.Attack();
+    }
+
+    public void StopSwordAttack()
+    {
+        swordAttack.StopAttack();
     }
 }
