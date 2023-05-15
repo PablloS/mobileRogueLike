@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4945363695768073081}
   - component: {fileID: 7092767514462125172}
   - component: {fileID: 1347100825667367849}
+  - component: {fileID: 4825774692414025564}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -133,6 +134,7 @@ MonoBehaviour:
   moveSpeed: 150
   maxSpeed: 1.5
   idleFriction: 0.9
+  canMove: 1
   swordAttack: {fileID: 8701588623947367503}
 --- !u!50 &4945363695768073081
 Rigidbody2D:
@@ -200,6 +202,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2762274, y: 0.16076607}
   m_EdgeRadius: 0
+--- !u!114 &4825774692414025564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250218106671392954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109fa68dd56b48c4c872a287bbd87239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDeath: 0
+  health: 15
 --- !u!1 &7772971164802041786
 GameObject:
   m_ObjectHideFlags: 0

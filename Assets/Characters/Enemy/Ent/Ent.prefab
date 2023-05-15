@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7926878031361687104}
   - component: {fileID: 152030472627635276}
   - component: {fileID: 3113234926089159924}
+  - component: {fileID: 7051419464686830333}
   m_Layer: 0
   m_Name: Ent
   m_TagString: Enemy
@@ -75,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -306683756936844212, guid: f5def3614955b594c9544e958d586cec, type: 3}
+  m_Sprite: {fileID: -1449661492811329556, guid: d9cbcf9f2cb1e974b8e629b04067328e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.25}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -119,8 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9916455adb4fd274384d7fda89eee5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDeath: 0
-  health: 9
+  damage: 5
 --- !u!70 &152030472627635276
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -156,3 +156,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7051419464686830333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257796760312617554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 109fa68dd56b48c4c872a287bbd87239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDeath: 0
+  health: 9
