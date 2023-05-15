@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
-    Collider2D swordCollider;
-    public float damage = 3f; 
+    public Collider2D swordCollider;
+    public float damage = 3f;
+
+    public float knockbackForce = 150f; 
 
     // Start is called before the first frame update
     void Start()
     {
-        swordCollider = GetComponent<Collider2D>();
-        swordCollider.enabled = false; 
+        if (swordCollider == null)
+        {
+            Debug.LogWarning("sword collider not set"); 
+        }
     }
 
     public void Attack()
@@ -21,14 +25,18 @@ public class SwordAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
-        {
-            Enemy enemy = other.GetComponent<Enemy>(); 
 
-            if (enemy != null)
-            {
-                enemy.Health -= damage; 
-            }
+        if (other.CompareTag("Enemy"))
+        {
+
+            IDamageable damageableObject = other.GetComponent<IDamageable>(); 
+
+            Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
+            Vector2 direction = (Vector2)(other.gameObject.transform.position - parentPosition).normalized;
+
+            Vector2 knockback = direction * knockbackForce;
+
+            damageableObject.OnHit(damage, knockback); 
         }
     }
 

@@ -5,15 +5,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 1f;
-    public ContactFilter2D movementFilter;
-    public float collisionOffset = 0.05f; 
+    public float moveSpeed = 150f;
+    public float maxSpeed = 8f;
+    public float idleFriction = 0.9f;
+    public bool canMove = true; 
 
-    Vector2 movementInput;
+    Vector2 movementInput = Vector2.zero;
+    //Поворот игрока в нужную сторону
     Vector3 playerRotation; 
     Rigidbody2D rb;
     Animator animator; 
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     public SwordAttack swordAttack; 
 
@@ -27,31 +28,22 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (movementInput != Vector2.zero)
+        if (movementInput != Vector2.zero && canMove)
         {
-            bool success = TryMove(movementInput); 
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed); 
 
-            if (!success)
-            {
-                success = TryMove(new Vector2(movementInput.x, 0));
-
-                if (!success)
-                {
-                    success = TryMove(new Vector2(0, movementInput.y)); 
-                }
-            }
-
-            animator.SetBool("isMoving", success);
-            rotatePlayer(movementInput); 
+            animator.SetBool("isMoving", true);
+            RotatePlayer(movementInput); 
             
         }
         else
         {
+            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction); 
             animator.SetBool("isMoving", false);
         }
     }
 
-    private void rotatePlayer(Vector2 direction)
+    private void RotatePlayer(Vector2 direction)
     {
         int zDirection = 0; 
 
@@ -101,33 +93,6 @@ public class PlayerController : MonoBehaviour
         transform.eulerAngles = playerRotation; 
     } 
 
-    private bool TryMove(Vector2 direction)
-    {
-        if (direction != Vector2.zero)
-        {
-            int count = rb.Cast(
-                movementInput, // X and Y values between -1 and 1 that represent the direction from the body to look for collisions
-                movementFilter, // The settings that determine where a collision can occur on such as layers to collide with
-                castCollisions, // List of collisions to store the found collisions into after the Cast is finished
-                moveSpeed * Time.fixedDeltaTime + collisionOffset); // The amount to cast equal to the movement plus an offset
-
-           if (count == 0)
-           {
-                rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
-                return true;
-           }
-           else
-           {
-                return false; 
-           }
-        }
-        else
-        {
-            return false; 
-        }
-        
-    }
-
     void OnMove(InputValue movementValue)
     {
         movementInput = movementValue.Get<Vector2>(); 
@@ -140,11 +105,13 @@ public class PlayerController : MonoBehaviour
 
     public void SwordAttack()
     {
+        canMove = false;
         swordAttack.Attack();
     }
 
     public void StopSwordAttack()
     {
+        canMove = true;
         swordAttack.StopAttack();
     }
 }
