@@ -6,7 +6,9 @@ class DamageableCharacter : MonoBehaviour, IDamageable
     Animator animator;
     SpriteRenderer sprite;
     Rigidbody2D rb;
-    public bool isDeath = false;
+    private bool isDeath = false;
+
+    public bool removableCharacter = true; 
 
     public float health;
 
@@ -46,12 +48,17 @@ class DamageableCharacter : MonoBehaviour, IDamageable
     IEnumerator Defeated()
     {
         MakeUntargertable();
-        animator.Play("death");
-        float deathTime = animator.GetCurrentAnimatorStateInfo(0).length;
-        yield return new WaitForSeconds(deathTime);
-        isDeath = true;
-        yield return new WaitForSeconds(3);
-        Destroy(gameObject);
+        animator.SetTrigger("IsDeath");
+        rb.simulated = false; 
+        if (removableCharacter)
+        {
+            float deathTime = animator.GetCurrentAnimatorStateInfo(0).length;
+            yield return new WaitForSeconds(deathTime);
+            isDeath = true;
+            yield return new WaitForSeconds(3);
+            Destroy(gameObject);
+        }
+        
     }
 
     public void OnHit(float damage, Vector2 knockback)
@@ -60,7 +67,7 @@ class DamageableCharacter : MonoBehaviour, IDamageable
         Health -= damage;
 
         //Применить силу удара
-        rb.AddForce(knockback);
+        rb.AddForce(knockback, ForceMode2D.Impulse);
     }
 
     public void OnHit(float damage)
@@ -72,6 +79,11 @@ class DamageableCharacter : MonoBehaviour, IDamageable
     public void MakeUntargertable()
     {
         gameObject.GetComponent<Collider2D>().enabled = false;
+    }
+
+    private void MakeTargertable()
+    {
+        gameObject.GetComponent<Collider2D>().enabled = true;
     }
 
 }

@@ -135,7 +135,7 @@ MonoBehaviour:
   maxSpeed: 1.5
   idleFriction: 0.9
   canMove: 1
-  swordAttack: {fileID: 8701588623947367503}
+  swordAttack: {fileID: 7501734535290291542}
 --- !u!50 &4945363695768073081
 Rigidbody2D:
   serializedVersion: 4
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109fa68dd56b48c4c872a287bbd87239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDeath: 0
+  removableCharacter: 0
   health: 15
 --- !u!1 &7772971164802041786
 GameObject:
@@ -226,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2857197117956922743}
   - component: {fileID: 3905871346162039489}
-  - component: {fileID: 8701588623947367503}
+  - component: {fileID: 7501734535290291542}
   m_Layer: 0
   m_Name: SwordHitbox
   m_TagString: Untagged
@@ -274,7 +274,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &8701588623947367503
+--- !u!114 &7501734535290291542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,9 +283,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7772971164802041786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1fa58790c4c7974dae2f633f209d238, type: 3}
+  m_Script: {fileID: 11500000, guid: d4e9027fdd476f14b9ac51e9c88aeec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordCollider: {fileID: 3905871346162039489}
+  AttackItemCollider: {fileID: 3905871346162039489}
+  tagTarger: Enemy
   damage: 3
-  knockbackForce: 300
+  knockbackForce: 5

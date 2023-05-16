@@ -26,13 +26,13 @@ public class SwordAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && !other.CompareTag("DetectionZone"))
         {
 
             IDamageable damageableObject = other.GetComponent<IDamageable>(); 
 
             Vector3 parentPosition = transform.parent.position;
-            Vector2 direction = (Vector2)(other.gameObject.transform.position - parentPosition).normalized;
+            Vector2 direction = (other.gameObject.transform.position - parentPosition).normalized;
 
             Vector2 knockback = direction * knockbackForce;
 
