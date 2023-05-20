@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: 0}
+  m_Actions: {fileID: -944628639613478452, guid: f4e5296238a588247beafb45f2137d4a, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &8087836011898744180
@@ -214,6 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109fa68dd56b48c4c872a287bbd87239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 815867506103059706, guid: 3bb4d84f934a83347a2dc8eb8fd00151, type: 3}
   removableCharacter: 0
   health: 15
 --- !u!1 &7772971164802041786

@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 class DamageableCharacter : MonoBehaviour, IDamageable
 {
+    public TextMeshProUGUI healthText; 
+
     Animator animator;
     SpriteRenderer sprite;
     Rigidbody2D rb;
@@ -61,10 +64,24 @@ class DamageableCharacter : MonoBehaviour, IDamageable
         
     }
 
+    private void OnHitText(string damage)
+    {
+        healthText.SetText(damage);
+        RectTransform textTransform = Instantiate(healthText).GetComponent<RectTransform>();
+
+        textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        
+
+        Canvas canvas = GameObject.FindObjectOfType<Canvas>();
+        textTransform.SetParent(canvas.transform);
+    }
+
     public void OnHit(float damage, Vector2 knockback)
     {
         animator.SetTrigger("IsHit");
         Health -= damage;
+
+        OnHitText(damage.ToString());
 
         //Применить силу удара
         rb.AddForce(knockback, ForceMode2D.Impulse);
@@ -74,6 +91,8 @@ class DamageableCharacter : MonoBehaviour, IDamageable
     {
         animator.SetTrigger("IsHit");
         Health -= damage;
+
+        OnHitText(damage.ToString());
     }
 
     public void MakeUntargertable()

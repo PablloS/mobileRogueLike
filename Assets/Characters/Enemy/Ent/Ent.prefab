@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109fa68dd56b48c4c872a287bbd87239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 815867506103059706, guid: 3bb4d84f934a83347a2dc8eb8fd00151, type: 3}
   removableCharacter: 1
   health: 9
 --- !u!1 &3009271453347926329
