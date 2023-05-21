@@ -192,7 +192,7 @@ TextureImporter:
       213: 6963603097375667728
     second: Hero3_62
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -213,6 +213,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -251,6 +252,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -314,6 +316,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1660,6 +1674,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Hero3_0: 5695067439797068420
+      Hero3_1: -9082362470115379267
+      Hero3_10: -9221055573223331252
+      Hero3_11: -6983128629252768069
+      Hero3_12: -2917875842172526262
+      Hero3_13: 679526231170704916
+      Hero3_14: 8410981614688349189
+      Hero3_15: 5614318292479342739
+      Hero3_16: -6081592817908653232
+      Hero3_17: -8784278262041571873
+      Hero3_18: 3462527256394007606
+      Hero3_19: 5764864903051336051
+      Hero3_2: 4321588784597810579
+      Hero3_20: 183940843565493822
+      Hero3_21: 8501586791057550521
+      Hero3_22: -2541428846067300248
+      Hero3_23: -3753206884893791201
+      Hero3_24: -4440387268910875745
+      Hero3_25: 2904187534259798139
+      Hero3_26: 5852008717627600921
+      Hero3_27: -7508960192339749876
+      Hero3_28: 8977000662944210404
+      Hero3_29: 4337111431287598287
+      Hero3_3: -4613177744906104430
+      Hero3_30: -5134067660238159378
+      Hero3_31: 6524760167784747222
+      Hero3_32: -3044087743923253315
+      Hero3_33: -4706293719054869734
+      Hero3_34: -3747948007946652044
+      Hero3_35: -1096507588434385888
+      Hero3_36: 5341783903915602387
+      Hero3_37: -8108334591314179302
+      Hero3_38: -4357876158603914074
+      Hero3_39: 970138240971720201
+      Hero3_4: 8916434447650990829
+      Hero3_40: -944786088234213440
+      Hero3_41: 2955387984840548956
+      Hero3_42: -5546365012703407815
+      Hero3_43: 6107621011952568718
+      Hero3_44: -4102472580570386472
+      Hero3_45: -5849048576598514028
+      Hero3_46: -3201589279902330240
+      Hero3_47: 2187263411429878454
+      Hero3_48: -1414230102712024190
+      Hero3_49: -4697265238026904806
+      Hero3_5: -4349285635719436429
+      Hero3_50: -8743722033542377250
+      Hero3_51: 6126092316997057575
+      Hero3_52: 8012095739755887240
+      Hero3_53: 8651653997647707253
+      Hero3_54: 6534235750143305606
+      Hero3_55: -4991644008299884686
+      Hero3_56: 5915176899497838943
+      Hero3_57: 9096001454969444313
+      Hero3_58: -7298193787128737102
+      Hero3_59: -4900241971700765099
+      Hero3_6: 5883725054523352918
+      Hero3_60: 821906785977598404
+      Hero3_61: -8564081677662570675
+      Hero3_62: 6963603097375667728
+      Hero3_7: -3945202119653223819
+      Hero3_8: -8971302443555161008
+      Hero3_9: -1104649570701428054
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

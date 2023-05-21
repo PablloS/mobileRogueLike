@@ -138,7 +138,7 @@ TextureImporter:
       213: 4701119148338757521
     second: tilemap-grass2_big-sheet_44
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -159,6 +159,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -197,6 +198,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -260,6 +262,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1228,6 +1242,52 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      tilemap-grass2_big-sheet_0: -2590367954294419679
+      tilemap-grass2_big-sheet_1: 4977757179155072388
+      tilemap-grass2_big-sheet_10: -5746398735661404991
+      tilemap-grass2_big-sheet_11: -8005811390841063775
+      tilemap-grass2_big-sheet_12: 5077329892088258461
+      tilemap-grass2_big-sheet_13: 6787583118762909248
+      tilemap-grass2_big-sheet_14: 8983612838925439896
+      tilemap-grass2_big-sheet_15: -4850626702199958046
+      tilemap-grass2_big-sheet_16: 6944840904109221013
+      tilemap-grass2_big-sheet_17: 499546565001639891
+      tilemap-grass2_big-sheet_18: -623336564368513507
+      tilemap-grass2_big-sheet_19: 8106256251044728331
+      tilemap-grass2_big-sheet_2: 3700384010659123968
+      tilemap-grass2_big-sheet_20: -4215553443992694376
+      tilemap-grass2_big-sheet_21: 1534988195791375754
+      tilemap-grass2_big-sheet_22: 6567095236418774659
+      tilemap-grass2_big-sheet_23: 9129933512840795522
+      tilemap-grass2_big-sheet_24: 6126978644389590700
+      tilemap-grass2_big-sheet_25: -5927978479774719838
+      tilemap-grass2_big-sheet_26: -6261974348867653112
+      tilemap-grass2_big-sheet_27: -1491646396259920701
+      tilemap-grass2_big-sheet_28: 7892229783597938242
+      tilemap-grass2_big-sheet_29: 8152551610001753129
+      tilemap-grass2_big-sheet_3: 7850385450082190816
+      tilemap-grass2_big-sheet_30: 9069704589783763187
+      tilemap-grass2_big-sheet_31: -8815141514094588212
+      tilemap-grass2_big-sheet_32: 257412655471630620
+      tilemap-grass2_big-sheet_33: 5585625675442736060
+      tilemap-grass2_big-sheet_34: -6038348683124646257
+      tilemap-grass2_big-sheet_35: 6040286048639222927
+      tilemap-grass2_big-sheet_36: 7779584815897325000
+      tilemap-grass2_big-sheet_37: 714593736624143215
+      tilemap-grass2_big-sheet_38: -609461699638358611
+      tilemap-grass2_big-sheet_39: 8656496961288331113
+      tilemap-grass2_big-sheet_4: 4738076944666693826
+      tilemap-grass2_big-sheet_40: 1818435983736590531
+      tilemap-grass2_big-sheet_41: 304520836982159783
+      tilemap-grass2_big-sheet_42: -5259380637823542150
+      tilemap-grass2_big-sheet_43: 1034466549314249135
+      tilemap-grass2_big-sheet_44: 4701119148338757521
+      tilemap-grass2_big-sheet_5: -5605655111591345938
+      tilemap-grass2_big-sheet_6: 5807494234077379577
+      tilemap-grass2_big-sheet_7: -3990148183584015421
+      tilemap-grass2_big-sheet_8: 6516449297774480070
+      tilemap-grass2_big-sheet_9: 2463799325013500457
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -93,7 +93,7 @@ TextureImporter:
       213: -3186112301072564912
     second: Hero2_big_29
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -114,6 +114,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -152,6 +153,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -215,6 +217,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -868,6 +882,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Hero2_big_0: 6812799420932429785
+      Hero2_big_1: 2906933754270010563
+      Hero2_big_10: 5574929397405530488
+      Hero2_big_11: 8351624898649208301
+      Hero2_big_12: -2062713543932538346
+      Hero2_big_13: 2130029644398649357
+      Hero2_big_14: -580572763401867607
+      Hero2_big_15: 6904616199960949554
+      Hero2_big_16: 1724850878203442481
+      Hero2_big_17: 8173250212607119238
+      Hero2_big_18: 1137046222413588032
+      Hero2_big_19: 6997976637126199225
+      Hero2_big_2: 7630750182661852897
+      Hero2_big_20: 6032219653420277218
+      Hero2_big_21: 5603123144504110530
+      Hero2_big_22: -3309463432308573314
+      Hero2_big_23: 6366500854042590343
+      Hero2_big_24: -7019439699134576151
+      Hero2_big_25: -4784263039673830599
+      Hero2_big_26: -1198565920969760881
+      Hero2_big_27: 537512314180870269
+      Hero2_big_28: 6492139882153006627
+      Hero2_big_29: -3186112301072564912
+      Hero2_big_3: -5284326442869955312
+      Hero2_big_4: -140389771379981808
+      Hero2_big_5: 5339840981535212466
+      Hero2_big_6: 2092958180415290691
+      Hero2_big_7: 128766438202563352
+      Hero2_big_8: 2219528349991446810
+      Hero2_big_9: 4769603935275151093
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -45,7 +45,7 @@ TextureImporter:
       213: 3048061612322983787
     second: Ent_sheet_small64x64_13
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -66,6 +66,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -104,6 +105,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -167,6 +169,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -484,6 +498,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Ent_sheet_small64x64_0: -5618861849584616496
+      Ent_sheet_small64x64_1: -9044143866224691612
+      Ent_sheet_small64x64_10: 4658501699068357859
+      Ent_sheet_small64x64_11: 8085448309558926857
+      Ent_sheet_small64x64_12: 6928345724758774290
+      Ent_sheet_small64x64_13: 3048061612322983787
+      Ent_sheet_small64x64_2: -764516259843800345
+      Ent_sheet_small64x64_3: 7027231676552255392
+      Ent_sheet_small64x64_4: -1010735400732161520
+      Ent_sheet_small64x64_5: -6338928840979233189
+      Ent_sheet_small64x64_6: 555121253269938240
+      Ent_sheet_small64x64_7: 183412078740829042
+      Ent_sheet_small64x64_8: 1619931413976640839
+      Ent_sheet_small64x64_9: 3556721411521511981
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
