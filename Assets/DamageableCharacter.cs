@@ -9,7 +9,7 @@ class DamageableCharacter : MonoBehaviour, IDamageable
     Animator animator;
     SpriteRenderer sprite;
     Rigidbody2D rb;
-    private bool isDeath = false;
+    public bool isDeath = false;
 
     public bool removableCharacter = true; 
 
@@ -51,6 +51,7 @@ class DamageableCharacter : MonoBehaviour, IDamageable
     IEnumerator Defeated()
     {
         MakeUntargertable();
+        Destroy(transform.Find("Shadow").gameObject);
         animator.SetTrigger("IsDeath");
         rb.simulated = false; 
         if (removableCharacter)
