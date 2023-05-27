@@ -218,8 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f894705ead6fe243862e955b253028a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 150
-  maxSpeed: 1.5
+  moveSpeed: 500
+  maxSpeed: 0.9
   idleFriction: 0.9
   canMove: 1
   swordAttack: {fileID: 7501734535290291542}
@@ -235,9 +235,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 0.2
+  m_LinearDrag: 1
+  m_AngularDrag: 0.4
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 70e65c6241395df4ea9ba818b2466aef, type: 2}
   m_Interpolate: 1
@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 815867506103059706, guid: 3bb4d84f934a83347a2dc8eb8fd00151, type: 3}
+  isDeath: 0
   removableCharacter: 0
   health: 15
 --- !u!1 &7772971164802041786

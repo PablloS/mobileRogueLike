@@ -15,6 +15,8 @@ class DamageableCharacter : MonoBehaviour, IDamageable
 
     public float health;
 
+    public bool isDamageble = true; 
+
     public float Health
     {
         set
@@ -79,21 +81,28 @@ class DamageableCharacter : MonoBehaviour, IDamageable
 
     public void OnHit(float damage, Vector2 knockback)
     {
-        animator.SetTrigger("IsHit");
-        Health -= damage;
+        if (isDamageble) {
+            animator.SetTrigger("IsHit");
+            Health -= damage;
 
-        OnHitText(damage.ToString());
+            OnHitText(damage.ToString());
 
-        //Применить силу удара
-        rb.AddForce(knockback, ForceMode2D.Impulse);
+            //Применить силу удара
+            rb.AddForce(knockback, ForceMode2D.Impulse);
+        }
+        
     }
 
     public void OnHit(float damage)
     {
-        animator.SetTrigger("IsHit");
-        Health -= damage;
+        if (isDamageble)
+        {
+            animator.SetTrigger("IsHit");
+            Health -= damage;
 
-        OnHitText(damage.ToString());
+            OnHitText(damage.ToString());
+        }
+        
     }
 
     public void MakeUntargertable()

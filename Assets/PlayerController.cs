@@ -26,10 +26,17 @@ public class PlayerController : MonoBehaviour
     {
         if (movementInput != Vector2.zero && canMove)
         {
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed); 
+            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed); 
+            rb.AddForce(movementInput * moveSpeed * Time.deltaTime);
+
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+                rb.velocity = rb.velocity.normalized * limitedSpeed;
+            }
 
             animator.SetBool("isMoving", true);
-            RotatePlayer(movementInput); 
+            RotatePlayer(movementInput);
             
         }
         else

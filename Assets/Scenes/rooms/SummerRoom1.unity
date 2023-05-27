@@ -389,35 +389,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!1 &1536701687 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4250218106671392954, guid: 7d5b47dd749d5624ba7b992dd9ef587c, type: 3}
-  m_PrefabInstance: {fileID: 631198357}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1536701688 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4825774692414025564, guid: 7d5b47dd749d5624ba7b992dd9ef587c, type: 3}
-  m_PrefabInstance: {fileID: 631198357}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536701687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 109fa68dd56b48c4c872a287bbd87239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1536701695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536701687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca8448adeaf8c7b48bbe3715f22777c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: {fileID: 1536701688}
 --- !u!1001 &1616750459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -477,6 +448,14 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 241780166}
+    - target: {fileID: 3997147819145044191, guid: c7aa8dca5faad3242912ad59e8610bd6, type: 3}
+      propertyPath: m_StandbyUpdate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997147819145044191, guid: c7aa8dca5faad3242912ad59e8610bd6, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7aa8dca5faad3242912ad59e8610bd6, type: 3}
 --- !u!1001 &1918571243
@@ -591,9 +570,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 1263489754968027386, guid: 05fd332e8e562d444af1fdf4c1e1636b, type: 3}
+      propertyPath: m_UpscaleRT
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1263489754968027387, guid: 05fd332e8e562d444af1fdf4c1e1636b, type: 3}
       propertyPath: m_ClearFlags
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263489754968027387, guid: 05fd332e8e562d444af1fdf4c1e1636b, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263489754968027387, guid: 05fd332e8e562d444af1fdf4c1e1636b, type: 3}
+      propertyPath: orthographic size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05fd332e8e562d444af1fdf4c1e1636b, type: 3}
