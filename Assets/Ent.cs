@@ -9,31 +9,38 @@ public class Ent : MonoBehaviour
 
     public DetectionZone detectionZone;
 
-    public DetectionZone attackZone; 
+    public DetectionZone attackZone;
 
     public float moveSpeed = 150f;
 
     private bool isMoving = false;
 
-    public AttackingItems entAttack; 
+    public AttackingItems entAttack;
+
+    public float attackDelay = 10f;
+    bool canAttack = true;
+
+    public float entKnockbackForce = 10f; 
 
     Rigidbody2D rb;
 
-    Animator animator; 
+    Animator animator;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
         if (detectionZone.detectedObj.Count > 0)
         {
-            if (attackZone.detectedObj.Count > 0)
+            if (attackZone.detectedObj.Count > 0 && canAttack)
             {
                 animator.SetTrigger("EntAttack");
+                StartCoroutine(EntAttack());
+
             }
             else
             {
@@ -60,21 +67,23 @@ public class Ent : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        IDamageable damageable = collision.collider.GetComponent<IDamageable>(); 
+        IDamageable damageable = collision.collider.GetComponent<IDamageable>();
 
         if (damageable != null && collision.collider.CompareTag("Player"))
         {
-            damageable.OnHit(damage); 
+            Vector3 parentPosition = transform.position;
+            Vector2 direction = (collision.gameObject.transform.position - parentPosition).normalized;
+
+            Vector2 knockback = direction * entKnockbackForce;
+            damageable.OnHit(damage, knockback);
         }
     }
 
-    public void EntAttack()
+    IEnumerator EntAttack()
     {
-        entAttack.Attack();
-    }
-
-    public void StopEntAttack()
-    {
-        entAttack.StopAttack();
+        StartCoroutine(entAttack.Attack());
+        canAttack = false;
+        yield return new WaitForSeconds(attackDelay);
+        canAttack = true;
     }
 }

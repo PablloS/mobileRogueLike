@@ -11,11 +11,13 @@ class DamageableCharacter : MonoBehaviour, IDamageable
     Rigidbody2D rb;
     public bool isDeath = false;
 
-    public bool removableCharacter = true; 
+    public bool removableCharacter = true;
 
+    public float invulnerabilityTime = 2f; 
+ 
     public float health;
 
-    public bool isDamageble = true; 
+    public bool isInvulnerability = false;
 
     public float Health
     {
@@ -54,7 +56,7 @@ class DamageableCharacter : MonoBehaviour, IDamageable
     {
         MakeUntargertable();
         Destroy(transform.Find("Shadow").gameObject);
-        animator.SetTrigger("IsDeath");
+        animator.Play("death");
         rb.simulated = false; 
         if (removableCharacter)
         {
@@ -81,28 +83,46 @@ class DamageableCharacter : MonoBehaviour, IDamageable
 
     public void OnHit(float damage, Vector2 knockback)
     {
-        if (isDamageble) {
-            animator.SetTrigger("IsHit");
+        if (!isInvulnerability)
+        {
+            float characterScale = gameObject.transform.localScale.x;
+            gameObject.transform.localScale = new Vector3(characterScale - 0.3f, characterScale + 0.3f, 1);
+            sprite.material.color = new Color(0.9f, 0.09f, 0.27f, 1);
             Health -= damage;
 
             OnHitText(damage.ToString());
 
             //Применить силу удара
             rb.AddForce(knockback, ForceMode2D.Impulse);
+
+            StartCoroutine(TakingDamage(characterScale));
         }
+        
         
     }
 
     public void OnHit(float damage)
     {
-        if (isDamageble)
+        if (!isInvulnerability)
         {
-            animator.SetTrigger("IsHit");
+            float characterScale = gameObject.transform.localScale.x;
+            gameObject.transform.localScale = new Vector3(characterScale + 0.2f, characterScale - 0.1f, 1);
             Health -= damage;
 
             OnHitText(damage.ToString());
+
+            StartCoroutine(TakingDamage(characterScale));
         }
         
+    }
+
+    IEnumerator TakingDamage(float scale)
+    {
+        isInvulnerability = true; 
+        yield return new WaitForSeconds(invulnerabilityTime);
+        gameObject.transform.localScale = new Vector3(scale, scale, 1);
+        sprite.material.color = new Color(1, 1, 1, 1);
+        isInvulnerability = false;
     }
 
     public void MakeUntargertable()

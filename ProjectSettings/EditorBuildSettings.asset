@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: d3bf56e9d8d2a8a40893c7d8032bcf81
   - enabled: 1
-    path: Assets/Scenes/GeneratedMapScene.unity
+    path: Assets/Scenes/rooms/SummerRoom1.unity
     guid: 14bdf836d1052a74b8a52b516a02aeda
   m_configObjects: {}

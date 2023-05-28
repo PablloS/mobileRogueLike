@@ -61,17 +61,13 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         animator.SetTrigger("swordAttack");
+        SwordAttack(); 
     }
 
     public void SwordAttack()
     {
         canMove = false;
-        swordAttack.Attack();
-    }
-
-    public void StopSwordAttack()
-    {
+        StartCoroutine(swordAttack.Attack());
         canMove = true;
-        swordAttack.StopAttack();
     }
 }
