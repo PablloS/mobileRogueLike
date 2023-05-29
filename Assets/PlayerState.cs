@@ -18,7 +18,6 @@ class PlayerState : MonoBehaviour
 
     IEnumerator GameOver()
     {
-        print("game over"); 
         yield return new WaitForSeconds(5); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); 
     }

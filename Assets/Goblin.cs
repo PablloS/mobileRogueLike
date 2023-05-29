@@ -90,6 +90,14 @@ public class Goblin : MonoBehaviour
         animator.SetBool("isMoving", isMoving);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.collider.CompareTag("Player") && !collision.collider.CompareTag("Enemy"))
+        {
+            StartCoroutine(InspectTerritory());
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.CompareTag("GoblinProtectZone") && !detectPlayer)

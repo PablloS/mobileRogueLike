@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 7092767514462125172}
   - component: {fileID: 1347100825667367849}
   - component: {fileID: 4825774692414025564}
+  - component: {fileID: 3677741447266026178}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -188,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f4e5296238a588247beafb45f2137d4a, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 11152b77621000c448c4d7e483b8561c, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -218,8 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f894705ead6fe243862e955b253028a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 500
-  maxSpeed: 0.9
+  moveSpeed: 350
+  maxSpeed: 0.7
   idleFriction: 0.9
   canMove: 1
   swordAttack: {fileID: 7501734535290291542}
@@ -309,6 +310,19 @@ MonoBehaviour:
   invulnerabilityTime: 0.1
   health: 15
   isInvulnerability: 0
+--- !u!114 &3677741447266026178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250218106671392954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8448adeaf8c7b48bbe3715f22777c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 4825774692414025564}
 --- !u!1 &7772971164802041786
 GameObject:
   m_ObjectHideFlags: 0
