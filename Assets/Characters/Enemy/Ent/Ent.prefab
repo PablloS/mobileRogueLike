@@ -252,6 +252,7 @@ MonoBehaviour:
   invulnerabilityTime: 0.3
   health: 9
   isInvulnerability: 0
+  healthBar: {fileID: 0}
 --- !u!1 &3009271453347926329
 GameObject:
   m_ObjectHideFlags: 0

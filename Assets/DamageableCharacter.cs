@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-class DamageableCharacter : MonoBehaviour, IDamageable
+public class DamageableCharacter : MonoBehaviour, IDamageable
 {
     public TextMeshProUGUI healthText; 
 
@@ -18,6 +18,8 @@ class DamageableCharacter : MonoBehaviour, IDamageable
     public float health;
 
     public bool isInvulnerability = false;
+
+    public HealthBar healthBar; 
 
     public float Health
     {
@@ -42,6 +44,7 @@ class DamageableCharacter : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        healthBar.SetMaxHeath(health); 
     }
 
     private void FixedUpdate()
@@ -96,6 +99,7 @@ class DamageableCharacter : MonoBehaviour, IDamageable
             rb.AddForce(knockback, ForceMode2D.Impulse);
 
             StartCoroutine(TakingDamage(characterScale));
+            healthBar.SetHeath(health);
         }
         
         
@@ -112,6 +116,8 @@ class DamageableCharacter : MonoBehaviour, IDamageable
             OnHitText(damage.ToString());
 
             StartCoroutine(TakingDamage(characterScale));
+
+            healthBar.SetHeath(health); 
         }
         
     }
