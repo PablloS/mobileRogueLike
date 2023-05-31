@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 152030472627635276}
   - component: {fileID: 3113234926089159924}
   - component: {fileID: 7051419464686830333}
+  - component: {fileID: 3661452465950308029}
   m_Layer: 0
   m_Name: Ent
   m_TagString: Enemy
@@ -253,6 +254,20 @@ MonoBehaviour:
   health: 9
   isInvulnerability: 0
   healthBar: {fileID: 0}
+--- !u!114 &3661452465950308029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257796760312617554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0abc3f66bf77a643812202b70069fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zone: {fileID: 1764363617, guid: f9fc801570415184d8e5c88700151eac, type: 3}
+  enemy: {fileID: 7051419464686830333}
 --- !u!1 &3009271453347926329
 GameObject:
   m_ObjectHideFlags: 0
