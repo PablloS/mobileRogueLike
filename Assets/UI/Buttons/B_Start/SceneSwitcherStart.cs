@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneSwitcherStart : MonoBehaviour
 {
     public void playGame() {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("GlobalLocation");
     }
 
     public void BackToMenu()

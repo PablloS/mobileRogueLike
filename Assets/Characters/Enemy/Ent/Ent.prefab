@@ -268,6 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zone: {fileID: 1764363617, guid: f9fc801570415184d8e5c88700151eac, type: 3}
   enemy: {fileID: 7051419464686830333}
+  numberOfCoin: 10
 --- !u!1 &3009271453347926329
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +343,7 @@ MonoBehaviour:
   AttackItemCollider: {fileID: 1791088372308105276}
   tagTarged: Player
   damage: 5
-  knockbackForce: 75
+  knockbackForce: 60
   attackPreparationTime: 0.63
   attackTime: 0.265
 --- !u!1 &4688443807086843407

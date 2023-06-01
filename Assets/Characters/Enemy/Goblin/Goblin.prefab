@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  moveSpeed: 750
+  moveSpeed: 850
   attackDelay: 3
   goblinKnockbackForce: 10
   protectedZone: {fileID: 0}

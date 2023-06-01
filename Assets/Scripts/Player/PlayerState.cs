@@ -19,6 +19,6 @@ class PlayerState : MonoBehaviour
     IEnumerator GameOver()
     {
         yield return new WaitForSeconds(5); 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); 
+        SceneManager.LoadScene("StartMenu"); 
     }
 }

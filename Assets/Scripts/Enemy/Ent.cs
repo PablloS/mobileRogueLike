@@ -14,6 +14,7 @@ public class Ent : MonoBehaviour
     public float moveSpeed = 150f;
 
     private bool isMoving = false;
+    private bool canMove = true;
 
     public AttackingItems entAttack;
 
@@ -42,7 +43,7 @@ public class Ent : MonoBehaviour
                 StartCoroutine(EntAttack());
 
             }
-            else
+            else if (canMove)
             {
                 Vector2 direction = (detectionZone.detectedObj[0].transform.position - transform.position).normalized;
                 isMoving = true;
@@ -81,8 +82,11 @@ public class Ent : MonoBehaviour
 
     IEnumerator EntAttack()
     {
-        StartCoroutine(entAttack.Attack());
+        canMove = false;
         canAttack = false;
+        StartCoroutine(entAttack.Attack());
+        yield return new WaitForSeconds(entAttack.attackPreparationTime + entAttack.attackTime);
+        canMove = true;
         yield return new WaitForSeconds(attackDelay);
         canAttack = true;
     }

@@ -25,7 +25,7 @@ public class PickUpCoin : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (haveTarget)
+        if (haveTarget && isOnSpawn)
         {
             Vector2 moveDirection = (target.transform.position - transform.position).normalized;
             rb.velocity = (moveDirection*coinsMoveSpeed*Time.deltaTime);

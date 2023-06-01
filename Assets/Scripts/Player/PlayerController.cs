@@ -26,14 +26,14 @@ public class PlayerController : MonoBehaviour
     {
         if (movementInput != Vector2.zero && canMove)
         {
-            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed); 
-            rb.AddForce(movementInput * moveSpeed * Time.deltaTime);
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed); 
+            //rb.AddForce(movementInput * moveSpeed * Time.deltaTime);
 
-            if (rb.velocity.magnitude > maxSpeed)
-            {
-                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
-                rb.velocity = rb.velocity.normalized * limitedSpeed;
-            }
+            //if (rb.velocity.magnitude > maxSpeed)
+            //{
+            //    float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+            //    rb.velocity = rb.velocity.normalized * limitedSpeed;
+            //}
 
             animator.SetBool("isMoving", true);
             RotatePlayer(movementInput);
@@ -61,13 +61,14 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         animator.SetTrigger("swordAttack");
-        SwordAttack(); 
+        StartCoroutine(SwordAttack());
     }
 
-    public void SwordAttack()
+    IEnumerator SwordAttack()
     {
         canMove = false;
         StartCoroutine(swordAttack.Attack());
+        yield return new WaitForSeconds(swordAttack.attackPreparationTime + swordAttack.attackTime); 
         canMove = true;
     }
 }
