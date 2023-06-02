@@ -13,8 +13,7 @@ public class PlayerController : MonoBehaviour
     Vector2 movementInput = Vector2.zero;
     Rigidbody2D rb;
     Animator animator;
-
-    public AttackingItems swordAttack;
+    public PlayerAttackBehavior attack; 
 
     void Start()
     {
@@ -26,14 +25,14 @@ public class PlayerController : MonoBehaviour
     {
         if (movementInput != Vector2.zero && canMove)
         {
-            rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed); 
-            //rb.AddForce(movementInput * moveSpeed * Time.deltaTime);
+            //rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput * moveSpeed * Time.deltaTime), maxSpeed);
+            rb.AddForce(movementInput * moveSpeed * Time.deltaTime);
 
-            //if (rb.velocity.magnitude > maxSpeed)
-            //{
-            //    float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
-            //    rb.velocity = rb.velocity.normalized * limitedSpeed;
-            //}
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                float limitedSpeed = Mathf.Lerp(rb.velocity.magnitude, maxSpeed, idleFriction);
+                rb.velocity = rb.velocity.normalized * limitedSpeed;
+            }
 
             animator.SetBool("isMoving", true);
             RotatePlayer(movementInput);
@@ -58,17 +57,9 @@ public class PlayerController : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-    void OnFire()
+    void OnFire() 
     {
-        animator.SetTrigger("swordAttack");
-        StartCoroutine(SwordAttack());
+        attack.Attack(); 
     }
 
-    IEnumerator SwordAttack()
-    {
-        canMove = false;
-        StartCoroutine(swordAttack.Attack());
-        yield return new WaitForSeconds(swordAttack.attackPreparationTime + swordAttack.attackTime); 
-        canMove = true;
-    }
 }

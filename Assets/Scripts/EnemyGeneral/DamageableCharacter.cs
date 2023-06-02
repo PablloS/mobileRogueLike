@@ -113,7 +113,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         if (!isInvulnerability)
         {
             float characterScale = gameObject.transform.localScale.x;
-            gameObject.transform.localScale = new Vector3(characterScale + 0.2f, characterScale - 0.1f, 1);
+            gameObject.transform.localScale = new Vector3(characterScale - 0.3f, characterScale + 0.3f, 1);
+            sprite.material.color = new Color(0.9f, 0.09f, 0.27f, 1);
             Health -= damage;
 
             OnHitText(damage.ToString());

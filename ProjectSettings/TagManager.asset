@@ -9,6 +9,7 @@ TagManager:
   - Canvas
   - EnemySpawner
   - GoblinProtectZone
+  - FrozenGolemInspectZone
   layers:
   - Default
   - TransparentFX

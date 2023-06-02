@@ -343,7 +343,7 @@ MonoBehaviour:
   AttackItemCollider: {fileID: 1791088372308105276}
   tagTarged: Player
   damage: 5
-  knockbackForce: 60
+  knockbackForce: 10
   attackPreparationTime: 0.63
   attackTime: 0.265
 --- !u!1 &4688443807086843407
