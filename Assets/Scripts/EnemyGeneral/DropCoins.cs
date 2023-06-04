@@ -5,14 +5,13 @@ using UnityEngine;
 public class DropCoins : MonoBehaviour
 {
     public CoinsZone zone;
-    public DamageableCharacter enemy;
 
     public int numberOfCoin = 10;
 
     void SpawnCoins()
     {
         zone.numberOfCoins = numberOfCoin; 
-        Instantiate(zone, enemy.transform.position, Quaternion.identity);
+        Instantiate(zone, transform.position, Quaternion.identity);
         Destroy(gameObject.GetComponent<DropCoins>());
     }
 }

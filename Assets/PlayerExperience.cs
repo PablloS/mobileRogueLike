@@ -9,11 +9,9 @@ public class PlayerExperience : MonoBehaviour
     private float exp = 0f;
 
     public float addExpAmount = 35f;
-
     private float levelThreshold = 100f;
 
     public TextMeshProUGUI levelText;
-
     public HealthBar expBar; 
     // Start is called before the first frame update
     private void Awake()

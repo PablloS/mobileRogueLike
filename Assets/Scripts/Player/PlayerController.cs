@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
 
     Vector2 movementInput = Vector2.zero;
+    public Vector2 lookDirection = Vector2.zero; 
     Rigidbody2D rb;
     Animator animator;
     public PlayerAttackBehavior attack; 
@@ -36,18 +37,18 @@ public class PlayerController : MonoBehaviour
 
             animator.SetBool("isMoving", true);
             RotatePlayer(movementInput);
-            
         }
         else
         {
-            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction); 
+            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+            
             animator.SetBool("isMoving", false);
         }
     }
 
     private void RotatePlayer(Vector2 direction)
     {
-        Vector2 lookDirection = (rb.velocity + (movementInput * moveSpeed)) - rb.position;
+        lookDirection = (rb.velocity + (movementInput * moveSpeed)) - rb.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
     } 

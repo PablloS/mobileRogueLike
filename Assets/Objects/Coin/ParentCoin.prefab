@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsMoveSpeed: 350
+  value: 1
 --- !u!50 &321568935
 Rigidbody2D:
   serializedVersion: 4
@@ -118,6 +119,10 @@ PrefabInstance:
     - target: {fileID: 3155652643918114442, guid: 29cc2070b39f43a4a92633fc771ac5af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622868864195891312, guid: 29cc2070b39f43a4a92633fc771ac5af, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8187148511141346051, guid: 29cc2070b39f43a4a92633fc771ac5af, type: 3}
       propertyPath: m_Name

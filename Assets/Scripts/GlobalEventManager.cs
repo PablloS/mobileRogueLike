@@ -6,7 +6,8 @@ public class GlobalEventManager
 {
     public static UnityEvent<int> OnCoinAdd = new UnityEvent<int>();
     public static UnityEvent OnEnemyDead = new UnityEvent();
-    public static UnityEvent OnTimerEnd = new UnityEvent(); 
+    public static UnityEvent OnTimerEnd = new UnityEvent();
+    public static UnityEvent OnAllEnemyDead = new UnityEvent(); 
 
     public static void SendCoinAdd(int numberOfCoins)
     {
@@ -21,6 +22,11 @@ public class GlobalEventManager
     public static void SendTimerEnd()
     {
         OnTimerEnd.Invoke();
+    }
+
+    public static void SendAllEnemyDead()
+    {
+        OnAllEnemyDead.Invoke(); 
     }
 }
 
